@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: fct_daily_sales
+    columns:
+      - name: sales_date
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fct_product_sales
+    columns:
+      - name: product_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_customers
+    columns:
+      - name: user_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_segment
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Repeat Customer
+                  - One-time Customer
+                  - No Purchase

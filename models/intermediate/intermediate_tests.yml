@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_order_details
+    columns:
+      - name: order_item_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: order_id
+        data_tests:
+          - not_null
+
+      - name: sale_price
+        data_tests:
+          - not_null
